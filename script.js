@@ -10,7 +10,7 @@ let form = document.getElementById("form");
 const searchForm = document.querySelectorAll(".search");
 
 const avatar = document.querySelector(".avatar");
-const nameUser = document.querySelector(".name");
+const userHead = document.querySelector(".name");
 const username = document.querySelector(".username");
 const join = document.querySelector(".join");
 const about = document.querySelector(".about");
@@ -21,7 +21,7 @@ const following = document.querySelector(".following");
 const area = document.querySelector(".location");
 const twitter = document.querySelector(".twitter");
 const website = document.querySelector(".website");
-const company = document.querySelector(".company");
+let company = document.querySelector(".company");
 
 headerMode.addEventListener("click", function () {
   if (body.classList.contains("dark")) {
@@ -37,13 +37,13 @@ headerMode.addEventListener("click", function () {
   }
 });
 function fetchAPI(user) {
-  fetch(`https://api.github.com/users/${user}`)
+  fetch(`https://api.github.com/users/` + user)
     .then((response) => {
       if (response.status === 404) {
         errMsg.style.display = "block";
         fetchAPI("octocat");
       } else {
-        if (user !== "octocat") {
+        if(user !== "octocat") {
           errMsg.style.display = "none";
         }
 
@@ -51,7 +51,7 @@ function fetchAPI(user) {
       }
     })
     .then((data) => {
-      nameUser.textContent = data.name;
+      userHead.textContent = data.name; 
       username.textContent = `@${data.login}`;
       join.textContent = `Joined ${data.created_at.slice(0, 10)}`;
       about.textContent = data.bio ? data.bio : `This profile has no bio`;
@@ -80,8 +80,8 @@ function fetchAPI(user) {
         website.style.opacity = "0.6";
       }
       if (data.company) {
+        company.href = "https://github.com/${company}"
         company.textContent = data.company;
-        company.style.opacity = "1";
       } else {
         company.textContent = `Not Available`;
         company.style.opacity = "0.6";
@@ -94,7 +94,8 @@ searchBtn.addEventListener("click", function (e) {
   e.preventDefault();
 
   if (searchInput.value === "") {
-    if ((errMsg.style.display = "none")) errMsg.style.display = "block";
+    if (errMsg.style.display = "block") errMsg.style.display = "none";
+
     return;
   } else {
     fetchAPI(searchInput.value);

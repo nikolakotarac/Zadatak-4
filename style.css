@@ -232,7 +232,6 @@ form {
   font-size: 15px;
   line-height: 22px;
   color: #4B6A9B;
-  
 }
 .twitter{
   opacity:0.6;
@@ -240,14 +239,15 @@ form {
 .twitter-img{
   opacity:0.6;
 }
-.website{
+
+.company{
   text-decoration: none;
   font-style: normal;
   font-weight: normal;
   font-size: 15px;
   line-height: 22px;
   color: #4B6A9B;
-}
+} 
 .website:hover{
   text-decoration-line: underline;
   cursor:pointer;
@@ -403,4 +403,12 @@ form {
   .fans {
       gap: 10px;
   }
+}
+@media only screen and (max-width: 420px) {  
+    .content{
+      width: 88%;
+    }
+    .search{
+      padding:0 30px;
+    }
 }
