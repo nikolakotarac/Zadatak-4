@@ -1,26 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-  <title></title>
-</head>
-<body>
-
-  devfinder
-
-  Light
-  Dark
-
-  Search GitHub username...
-  Search
-
-  Joined
-
-  Repos
-  Followers
-  Following
-
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>devfinder</title>
+  </head>
+  <body>
+    <div class="content">
+      <div class="header">
+        <h3 class="headline">devfinder</h3>
+        <div class="header-mode">
+          <p class="mode-txt">DARK</p>
+          <img src="./assets/icon-moon.svg" class="mode-btn" />
+        </div>
+      </div>
+      <form id="form">
+        <input
+          type="text"
+          placeholder="Search GitHub username..."
+          class="search"
+        />
+        <img src="./assets/icon-search.svg" class="search-img" />
+        <input type="button" value="Search" class="search-btn" />
+        <p class="result-err">No results</p>
+      </form>
+      <div class="profile">
+        <div class="profile-header">       
+            <div class="avatar-container"><img src="" class="avatar" /></div>
+              <div class="header-first">
+                  <h3 class="name"></h3>
+                  <a class="username" href="https://github.com/octocat"></a>
+                </div> 
+                  <div class="join-container"><p class="join"></p></div>
+              <div class="about-container">
+                <p class="about">
+                
+              </p>
+            </div>
+        </div>
+        <div class="fans">
+          <div class="fans-content">
+            <h4>Repos</h4>
+            <p class="repos"></p>
+          </div>
+          <div class="fans-content">
+            <h4>Followers</h4>
+            <p class="followers"></p>
+          </div>
+          <div class="fans-content">
+            <h4>Following</h4>
+            <p class="following"></p>
+          </div>
+        </div>
+        <div class="contact">
+          <div class="contact-content">
+            <img src="./assets/icon-location.svg" class="location-img" />
+            <p class="location"></p>
+          </div>
+          <div class="contact-content">
+            <img src="./assets/icon-twitter.svg" class="twitter-img" />
+            <p class="twitter"></p>
+          </div>
+          <div class="contact-content">
+            <img src="./assets/icon-website.svg" class="website-img" />
+            <p class="website"></p>
+          </div>
+          <div class="contact-content">
+            <img src="./assets/icon-company.svg" class="company-img" />
+            <a href="" class="company"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>
